@@ -1,0 +1,203 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yukiko</title>
+  <meta name="description" content="Get your dream design with us, Yukiko.">
+  <link rel="icon" type="image/x-icon" href="{% static 'images/logo_ranil.png' %}">
+  <link rel="shortcut icon" href="#" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <script src="https://kit.fontawesome.com/b951987362.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/39d6712fc9.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Croissant+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fuggles&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<header>
+  <nav class="navbar navbar-light bg-light" id="navbar">
+    <div class="container-fluid ">
+      <a class="navbar-brand" href="#">
+        <div class="placeholder position-relative">
+          
+            <div class="contain ">
+              <img src="{% static 'images/logo_ranil.png' %}" alt="" width="50" height="50"
+              class="d-inline-block align-text-top">
+              <span class="logo-head">Yukiko</span>
+            </div>
+            
+          
+        </div>
+      </a>
+    </div>
+  </nav>
+</header>
+
+<body>
+  <div class="container-fluid top">
+    <div class="row top-gif" style="background-image: url('{% static "images/giphy.gif" %}');">
+      <div class="col-12 col-xl-6">
+        <h1 class="header-tag"><span>LETS</span> <span>GIVE</span> <span>LIFE</span> <span>TO</span> <span>YOUR</span> <br><span id="randomText">IDEA.</span></h1>
+      </div>
+      <div class="col-12 col-xl-6 tag-2">
+        <h1 class="header-tag-2"><span id="heart">DESIGN</span> <br><span id="your">YOUR</span> <span id="brand">HAPPINESS.</span></h1>
+      </div>
+      
+    </div>
+  </div>
+  <div class="container-fluid middle ">
+    <div class="row">
+      <div class="col-11 mx-auto container-1">
+        <h1 id="works" class="trigger"><span id="work1" class="revealUp">OUR</span> <br><span id="work2" class="revealUp">WORKS'</span></h1>
+      </div>
+    </div>
+
+  </div>
+  {% for content in category %}
+  <h2 class="title">{{content.title}}</h2>
+  <div class="placeholder">
+    <div class="animated-background"></div>
+    <div class="sli">
+      <div class="main-carousel">
+    
+        {% for pic in images %}
+        {% if content.id == pic.category_id %}
+        <div class="col-xl-4 col-lg-5 col-md-5 col-sm-6 col-12 mx-auto carousel-cell ">
+          
+          <img src="{{pic.image.url}}" class="img-fluid" alt="...">
+          
+        </div>
+        {%endif%}
+        {%endfor%}
+      </div>
+    </div>
+    
+    
+  </div>
+  
+  <div id="spacer"></div>
+  {% endfor %}
+  <!-----
+  <h2 class="title">TEST</h2>
+  <div class="main-carousel">
+    <div class="col-xl-4 col-lg-5 col-md-5 col-sm-6 col-12 mx-auto carousel-cell">
+
+      <img src="{% static 'images/poster1.png' %}" class="img-fluid" alt="...">
+
+    </div>
+    <div class="col-xl-4 col-lg-5 col-md-5 col-sm-6 col-12 mx-auto carousel-cell">
+
+      <img src="{% static 'images/poster2.png' %}" class="img-fluid" alt="...">
+
+    </div>
+    <div class="col-xl-4 col-lg-5 col-md-5 col-sm-6 col-12 mx-auto carousel-cell">
+
+      <img src="{% static 'images/poster3.png' %}" class="img-fluid" alt="...">
+
+    </div>
+    <div class="col-xl-4 col-lg-5 col-md-5 col-sm-6 col-12 mx-auto carousel-cell">
+
+      <img src="{% static 'images/poster4.png' %}" class="img-fluid" alt="...">
+
+    </div>
+    <div class="col-xl-4 col-lg-5 col-md-5 col-sm-6 col-12 mx-auto carousel-cell">
+
+      <img src="{% static 'images/poster5.png' %}" class="img-fluid" alt="...">
+
+    </div>
+    <div class="col-xl-4 col-lg-5 col-md-5 col-sm-6 col-12 mx-auto carousel-cell">
+
+      <img src="{% static 'images/poster6.png' %}" class="img-fluid" alt="...">
+
+    </div>
+  </div>
+  <div id="spacer"></div>---->
+
+  
+  <script type="text/javascript" src="{% static 'js/random.js'%}"></script>
+  <script src="https://kit.fontawesome.com/b951987362.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  <script type="text/javascript">
+    $('.main-carousel').flickity({
+    // options
+    cellAlign: 'left',
+    wrapAround:true,
+    freeScroll: true,
+    autoPlay: true,
+    adaptiveHeight: false,
+    });
+  </script>
+</body>
+<footer>
+  <div>
+
+    <footer class="text-center text-white footer-main">
+    <!-- Grid container -->
+    <div class="container pt-4">
+      <p><span id="ranil">Ranil</span> <br><span id="graphic">Grpahic</span> <span id="design">Designer.</span></p>
+      <section class="mb-4 my-4">
+  
+        <!-- Google -->
+        <a
+          class=" btn-link btn-floating btn-lg text-dark m-2"
+          href="mailto: ranil@yukiko.in"
+          role="button"
+          data-mdb-ripple-color="dark"
+          ><i class="fa fa-envelope"></i
+        ></a>
+  
+        <!-- Instagram -->
+        <a
+          class="insta btn-link btn-floating btn-lg text-dark m-2"
+          href="https://www.instagram.com/ranils_artworks/ "
+          role="button"
+          target="_blank"
+          data-mdb-ripple-color="dark"
+          ><i class="fab fa-instagram"></i
+        ></a>
+  
+        
+        <!-- youtube -->
+        <a
+          class=" btn-link btn-floating btn-lg text-dark m-2"
+          href="https://m.youtube.com/@ranils_artworks/featured#bottom-sheet"
+          role="button"
+          target="_blank"
+          data-mdb-ripple-color="dark"
+          ><i class="fab fa-youtube"></i
+        ></a>
+        <!-- phone -->
+        <a
+          class=" btn-link btn-floating btn-lg text-dark m-2"
+          href="tel: +91 9994050905"
+          role="button"
+          data-mdb-ripple-color="dark"
+          ><i class="fa fa-phone"></i
+        ></a>
+      </section>
+      <!-- Section: Social media -->
+    </div>
+    
+    <!-- Grid container -->
+  
+    
+  </footer>
+    
+  </div>
+  <!-- End of .container -->
+</footer>
+
+</html>
